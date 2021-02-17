@@ -9,3 +9,8 @@
     box-shadow: 5px 3px 3px #636161;
     color: black;
 }
+
+.card:hover {
+    box-shadow: 10px 6px 6px #636161;
+
+}
