@@ -7,20 +7,24 @@ import Card from './components/Card'
 
 function App() {
 
-  const [data, setData] = useState('')
+  const [mundialData, setMundialData] = useState('')
   const [brData, setBrData] = useState('')
 
-  useEffect(() => {
+  function showMundialData() {
     axios
       .get('https://disease.sh/v3/covid-19/all?yesterday=true&twoDaysAgo=true&allowNull=true')
       .then(res => {
-        setData(res.data)
+        setMundialData(res.data)
 
-        // console.log(res.data)
+        console.log(res.data)
       })
-  }, [])
+  }
 
   useEffect(() => {
+    showMundialData()
+  }, [])
+
+  function showBrasilData() {
     axios
       .get('https://disease.sh/v3/covid-19/countries/Brazil?yesterday=true&twoDaysAgo=true&strict=true')
       .then(res => {
@@ -28,27 +32,43 @@ function App() {
         
         // console.log(res.data)
       })
-    }, [])
+  }
 
   return (
     <div className='App'>
-      <h1>Covid-19 pelo mundo</h1>
-      <div className="cards-container">
-        <Card title="Número atualizado de casos:" info={data.cases}/>
-        <Card title="Número de casos ativos:" info={data.active} />
-        <Card title="Número de casos registrados hoje:" info={data.todayCases} />
-        <Card title="Número de mortes:" info={data.deaths} />
-        <Card title="Número de mortes registradas hoje:" info={data.todayDeaths} />
+      <div className="container">
+        <aside className="menu">
+        <h2 className="menuTitle">COVID-19</h2>
+          <div className="menuBtn">Mundo</div>
+          <div className="menuBtn">Brasil</div>
+        </aside>
+        <div className="dataDiv">
+          <h1>Mundo</h1>
+          <div className="cards-container">
+            <Card title="Número atualizado de casos:" info={mundialData.cases.toLocaleString('pt-BR')}/>
+            <div className="part">
+              <div>
+                <Card title="Número de casos ativos:" info={mundialData.active.toLocaleString('pt-BR')} />
+                <Card title="Número de casos registrados hoje:" info={mundialData.todayCases.toLocaleString('pt-BR')} />
+              </div>
+              <div>
+                <Card title="Número de mortes:" info={mundialData.deaths.toLocaleString('pt-BR')} />
+                <Card title="Número de mortes registradas hoje:" info={mundialData.todayDeaths.toLocaleString('pt-BR')} />
+              </div>
+            </div>
+          </div>
+        </div>  
       </div>
+       
 
-      <h1>Covid-19 no Brasil</h1>
+      {/* <h1>Brasil</h1>
       <div className="cards-container">
-        <Card title="Número atualizado de casos:" info={brData.cases}/>
-        <Card title="Número de casos ativos:" info={brData.active} />
-        <Card title="Número de casos registrados hoje:" info={brData.todayCases} />
-        <Card title="Número de mortes:" info={brData.deaths} />
-        <Card title="Número de mortes registradas hoje:" info={brData.todayDeaths} />
-      </div>
+        <Card title="Número atualizado de casos:" info={brData.cases.toLocaleString('pt-BR')}/>
+        <Card title="Número de casos ativos:" info={brData.active.toLocaleString('pt-BR')} />
+        <Card title="Número de casos registrados hoje:" info={brData.todayCases.toLocaleString('pt-BR')} />
+        <Card title="Número de mortes:" info={brData.deaths.toLocaleString('pt-BR')} />
+        <Card title="Número de mortes registradas hoje:" info={brData.todayDeaths.toLocaleString('pt-BR')} />
+      </div> */}
     </div>
   );
 }

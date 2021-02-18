@@ -1,16 +1,15 @@
 .card {
     min-width: 50px;
-    width: auto;
-    min-height: 50px;
-    background-color: #fff;
+    min-height: 80px;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
+    background-color: #EFEFEF;
     box-shadow: 5px 3px 3px #636161;
-    color: black;
-}
-
-.card:hover {
+    color: #3B3B3B;
+  }
+  
+  .card:hover {
     box-shadow: 10px 6px 6px #636161;
-
-}
+  
+  }
