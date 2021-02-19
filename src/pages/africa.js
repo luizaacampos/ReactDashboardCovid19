@@ -1,20 +1,20 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
-import { FaGlobeAmericas } from 'react-icons/fa'
+import { FaGlobeAfrica } from 'react-icons/fa'
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
 
-export default function AmericaSul() {
+export default function Africa() {
     
-    const [sulData, setSulData] = useState('')
+    const [africaData, setAfricaData] = useState('')
     const [countries, setCountries] = useState('')
 
     useEffect(() => {
         axios
-            .get('https://disease.sh/v3/covid-19/continents/South%20America?yesterday=true&twoDaysAgo=true&strict=true')
+            .get('https://disease.sh/v3/covid-19/continents/Africa?yesterday=true&twoDaysAgo=true&strict=true')
             .then(res => {
-            setSulData(res.data)
+            setAfricaData(res.data)
             setCountries(res.data.countries)
     
             console.log(res.data)
@@ -26,19 +26,19 @@ export default function AmericaSul() {
             <div className="container">
                 <Menu />
                 <div className="dataDiv">
-                    <h1>América do Sul <FaGlobeAmericas /></h1>
+                    <h1>África <FaGlobeAfrica /></h1>
                     <div className="cards-container">
-                        <Card title="Número atualizado de casos:" info={sulData.cases}/>
+                        <Card title="Número atualizado de casos:" info={africaData.cases}/>
                         <div className="part">
                             <div>
                                 <Card title="Número de países atingidos:" info={countries.length} />
-                                <Card title="Número de casos ativos:" info={sulData.active} />
-                                <Card title="Número de casos registrados hoje:" info={sulData.todayCases} />
+                                <Card title="Número de casos ativos:" info={africaData.active} />
+                                <Card title="Número de casos registrados hoje:" info={africaData.todayCases} />
                             </div>
                             <div>
-                                <Card title="População:" info={sulData.population} />
-                                <Card title="Número de mortes:" info={sulData.deaths} />
-                                <Card title="Número de mortes registradas hoje:" info={sulData.todayDeaths} />
+                                <Card title="População:" info={africaData.population} />
+                                <Card title="Número de mortes:" info={africaData.deaths} />
+                                <Card title="Número de mortes registradas hoje:" info={africaData.todayDeaths} />
                             </div>
                         </div>
                     </div>

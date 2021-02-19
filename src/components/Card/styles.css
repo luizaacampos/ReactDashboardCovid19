@@ -7,9 +7,20 @@
     background-color: #EFEFEF;
     box-shadow: 5px 3px 3px #636161;
     color: #3B3B3B;
+    border: 3px solid #fff;
   }
   
   .card:hover {
     box-shadow: 10px 6px 6px #636161;
   
+  }
+
+  .title {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .info {
+    font-size: 30px;
+    font-weight: bold;
   }

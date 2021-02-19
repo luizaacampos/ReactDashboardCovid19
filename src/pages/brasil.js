@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import { GiBrazil } from 'react-icons/gi'
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
@@ -18,13 +19,19 @@ export default function Brasil() {
             })
     }, [])
 
+    function formataNumero(num) {
+        return num.toLocaleString('pt-BR')
+    }
+    // console.log(formataNumero(brData.cases))
+
     return (
         <div>
             <div className="container">
                 <Menu />
                 <div className="dataDiv">
-                    <h1>Brasil</h1>
-                    <div className="cards-container">                        <div className="part">
+                    <h1>Brasil <GiBrazil /></h1>
+                    <div className="cards-container">                        
+                    <div className="part">
                             <div>
                                 <Card title="Número atualizado de casos:" info={brData.cases}/>
                                 <Card title="Número de casos ativos:" info={brData.active} />

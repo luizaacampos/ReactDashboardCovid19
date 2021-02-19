@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import { FaGlobeAsia } from 'react-icons/fa'
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
@@ -25,7 +26,7 @@ export default function Asia() {
             <div className="container">
                 <Menu />
                 <div className="dataDiv">
-                    <h1>Ásia</h1>
+                    <h1>Ásia <FaGlobeAsia /></h1>
                     <div className="cards-container">
                         <Card title="Número atualizado de casos:" info={asiaData.cases}/>
                         <div className="part">

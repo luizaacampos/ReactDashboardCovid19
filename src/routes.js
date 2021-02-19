@@ -10,6 +10,7 @@ import Europa from './pages/europa'
 import AmericaNorte from './pages/americaNorte'
 import AmericaSul from './pages/americaSul'
 import Oceania from './pages/oceania'
+import Africa from './pages/africa'
 
 const Routes = () => (
     <BrowserRouter>
@@ -22,6 +23,7 @@ const Routes = () => (
          <Route path="/america-do-norte" component={AmericaNorte} />
          <Route path="/america-do-sul" component={AmericaSul} />
          <Route path="/oceania" component={Oceania} />
+         <Route path="/africa" component={Africa} />
      </Switch>   
     </BrowserRouter>
 )

@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import { RiGlobeFill } from 'react-icons/ri'
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
@@ -23,7 +24,7 @@ export default function Mundo() {
             <div className="container">
                <Menu />
                 <div className="dataDiv">
-                    <h1>Mundo</h1>
+                    <h1>Mundo <RiGlobeFill /></h1>
                     <div className="cards-container">
                         <div className="part">
                             <div>
