@@ -4,28 +4,37 @@ import { GiBrazil } from 'react-icons/gi'
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
+import MenuHamburger from '../components/MenuHamburger'
 
 export default function Brasil() {
     
-    const [brData, setBrData] = useState('')
+    const [cases, setCases] = useState('')
+    const [active, setActive] = useState('')
+    const [todayCases, setTodayCases] = useState('')
+    const [population, setPopulation] = useState('')
+    const [deaths, setDeaths] = useState('')
+    const [todayDeaths, setTodayDeaths] = useState('')
 
     useEffect(() => {
         axios
             .get('https://disease.sh/v3/covid-19/countries/Brazil?yesterday=true&twoDaysAgo=true&strict=true')
             .then(res => {
-            setBrData(res.data)
-    
-            console.log(res.data)
+            
+                setCases(res.data.cases)
+                setActive(res.data.active)
+                setTodayCases(res.data.todayCases)
+                setPopulation(res.data.population)
+                setDeaths(res.data.deaths)
+                setTodayDeaths(res.data.todayDeaths)
+        
+                // console.log(res.data)
             })
     }, [])
 
-    function formataNumero(num) {
-        return num.toLocaleString('pt-BR')
-    }
-    // console.log(formataNumero(brData.cases))
-
     return (
         <div>
+            <MenuHamburger />
             <div className="container">
                 <Menu />
                 <div className="dataDiv">
@@ -33,19 +42,20 @@ export default function Brasil() {
                     <div className="cards-container">                        
                     <div className="part">
                             <div>
-                                <Card title="Número atualizado de casos:" info={brData.cases}/>
-                                <Card title="Número de casos ativos:" info={brData.active} />
-                                <Card title="Número de casos registrados hoje:" info={brData.todayCases} />
+                                <Card title="Casos atualizados:" info={cases.toLocaleString('pt-BR')}/>
+                                <Card title="Casos ativos:" info={active.toLocaleString('pt-BR')} />
+                                <Card title="Casos registrados hoje:" info={todayCases.toLocaleString('pt-BR')} />
                             </div>
                             <div>
-                                <Card title="População:" info={brData.population} />
-                                <Card title="Número de mortes:" info={brData.deaths} />
-                                <Card title="Número de mortes registradas hoje:" info={brData.todayDeaths} />
+                                <Card title="População:" info={population.toLocaleString('pt-BR')} />
+                                <Card title="Mortes:" info={deaths.toLocaleString('pt-BR')} />
+                                <Card title="Mortes registradas hoje:" info={todayDeaths.toLocaleString('pt-BR')} />
                             </div>
                         </div>
                     </div>
                 </div>  
             </div>
+            <Footer />
         </div>
     )
 }

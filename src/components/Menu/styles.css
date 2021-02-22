@@ -4,17 +4,17 @@
     align-items: center;
     justify-content: center;
     width: 25vw;
-    height: 85vh;
-    margin: 50px;
-    background-color: #EFEFEF;
+    height: 90vh;
+    margin: 20px;
+    background-color: var(--white);
     border-radius: 10px;
     box-shadow: 5px 3px 3px #636161;
 }
   
 .menuTitle {
     font-size: 40px;
-    margin-bottom: 5px;
-    color: #0d0d0d;
+    margin: 20px;
+    color: #022438;
     line-height: 40px;
 }
   
@@ -22,42 +22,40 @@
     width: 200px;
     min-height: 40px;
     height: auto;
-    background-color: #0677B8;
+    background-color: #045380;
     border-radius: 10px;
     box-shadow: 10px 6px 6px #636161;
     margin: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
-    color: #0d0d0d;
+    color: #EFEFEF;
     font-size: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
     cursor: pointer;
+    border: 0;
+    border-bottom: 5px solid var(--hover);
 }
   
 .menuBtn:hover {
     box-shadow: 5px 3px 3px #636161;
 }
 
-@media screen and (max-width: 1200px) {
-    .menu {
-        height: 50vh;
+.brBtn {
+    background-color: var(--brazil);
+    border-bottom: 5px solid var(--brazil-dark);
+}
+
+@media (max-width: 1080px) {
+    .menuBtn {
+        width: 150px;
     }
 
     .menuTitle {
-        font-size: 30px;
-    }
-    
-    .menuBtn {
-        min-height: 30px;
-        width: 150px;
-        font-size: 20px;
+        font-size: 25px;
     }
 }
-@media screen and (max-width: 950px) {
-    .menuBtn {
-        min-height: 20px;
-        width: 100px;
-        font-size: 12px;
-    } 
+
+@media (max-width: 720px) {
+    .menu {
+        display: none;
+    }  
 }

@@ -7,8 +7,18 @@
   font-family: 'Lato', sans-serif;
 }
 
+:root {
+  --background: #0677B8;
+  --title: #022438;
+  --hover: #023a59;
+  --button: #045380;
+  --white: #EFEFEF;
+  --brazil: #36800A;
+  --brazil-dark: #255527;
+}
+
 body {
-  background-color: #0677B8;
+  background-color: var(--background);
   justify-content: center;
   align-items: center;
 }
@@ -29,21 +39,20 @@ body {
   font-size: 80px;
 }
 
-.home button {
+.homeBtn {
   width: 150px;
   height: 45px;
   border-radius: 5px;
   border: 0;
   margin: 10px;
   font-size: 20px;
-  border-bottom: 2px solid #000;
-  border-right: 2px solid #000;
+  border-bottom: 5px solid var(--hover);
   cursor: pointer;
-  background-color: #045380;
+  background-color: var(--button);
 }
 
-.home button:hover {
-  background-color: #023a59;
+.homeBtn:hover {
+  background-color: var(--hover);
 }
 
 .container {
@@ -53,13 +62,12 @@ body {
 }
 
 .dataDiv {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 h1 {
   font-size: 60px;
-  color: #0d0d0d;
-  text-transform: uppercase;
+  color: var(--title);
 }
 
 .cards-container {
@@ -69,7 +77,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap; */
 }
 
 .part {
@@ -77,5 +84,31 @@ h1 {
   margin: 20px;
 }
 
+@media (max-width: 720px) {
+  .dataDiv h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 520px) {
+  .dataDiv {
+    margin-top: 50px;
+  }
+
+  .cards-container {
+    margin-top: 50px;
+    height: auto;
+  }
+
+  .part {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .home h1 {
+    font-size: 50px;
+  }
+}
 
 

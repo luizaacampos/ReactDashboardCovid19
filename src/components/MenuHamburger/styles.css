@@ -1,0 +1,44 @@
+.menu-mobile {
+    display: none;
+    margin-top: 30px;
+    font-size: 50px;
+    height: 25px;
+}
+
+.menu-lista {
+    background-color: var(--white);
+    width: 50%;
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.open {
+    display: block;
+}
+
+li {
+    border-bottom: 1px solid var(--hover);
+    font-size: 20px;
+}
+
+li:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 720px) {
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        margin: 20px;
+    }  
+}
