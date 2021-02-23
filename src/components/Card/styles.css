@@ -8,6 +8,7 @@
     box-shadow: 5px 3px 3px #636161;
     color: var(--hover);
     border: 3px solid #fff;
+    transition: box-shadow .2s;
   }
   
   .card:hover {

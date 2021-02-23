@@ -1,12 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { RiVirusFill } from 'react-icons/ri'
+import { motion } from 'framer-motion'
 
 import './styles.css'
 
 export default function Menu() {
     return (
-        <aside className="menu">
+        <motion.aside
+            transition={{ delay: 0, duration: 0.5 }}
+            variants={{
+                show: { opacity: 1, y: '0' },
+                hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+             animate="show"
+            className="menu"
+        >
             <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}>
                 <h2 className="menuTitle">COVID-19 <RiVirusFill /></h2>
             </Link>
@@ -51,6 +61,6 @@ export default function Menu() {
                     Oceania
                 </button>
             </Link>
-        </aside>
+        </motion.aside>
     )
 }

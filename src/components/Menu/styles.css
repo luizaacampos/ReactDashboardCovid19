@@ -33,6 +33,7 @@
     cursor: pointer;
     border: 0;
     border-bottom: 5px solid var(--hover);
+    transition: box-shdow .2s;
 }
   
 .menuBtn:hover {

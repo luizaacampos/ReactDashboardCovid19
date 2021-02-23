@@ -49,6 +49,7 @@ body {
   border-bottom: 5px solid var(--hover);
   cursor: pointer;
   background-color: var(--button);
+  transition: background-color .2s;
 }
 
 .homeBtn:hover {

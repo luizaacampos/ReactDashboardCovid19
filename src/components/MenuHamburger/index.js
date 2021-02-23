@@ -18,7 +18,7 @@ export default function MenuHamburger() {
             <div className={`menu-lista ${open ? "open" : "hide"}`}>
                 <ul>
                     <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}>
-                        <li>COVID-19</li>
+                        <li className="list-title">COVID-19</li>
                     </Link>
                     <Link to={'/mundo'} style={{ textDecoration: 'none', color: 'black' }}>
                         <li>Mundo</li>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import { motion } from 'framer-motion';
 import { FaGlobeAfrica } from 'react-icons/fa'
 
 import Card from '../components/Card'
@@ -39,7 +40,16 @@ export default function Africa() {
             <MenuHamburger />
             <div className="container">
                 <Menu />
-                <div className="dataDiv">
+                <motion.div 
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    variants={{
+                        show: { opacity: 1 },
+                        hidden: { opacity: 0 },
+                    }}
+                    initial="hidden"
+                    animate="show"
+                    className="dataDiv"
+                >
                     <h1>África <FaGlobeAfrica /></h1>
                     <div className="cards-container">
                         <Card title="Número atualizado de casos:" info={cases.toLocaleString('pt-BR')} />
@@ -56,7 +66,7 @@ export default function Africa() {
                             </div>
                         </div>
                     </div>
-                </div>  
+                </motion.div>  
             </div>
             <Footer />
         </div>

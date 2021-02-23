@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
 import { RiGlobeFill } from 'react-icons/ri'
+import { motion } from 'framer-motion';
 
 import Card from '../components/Card'
 import Menu from '../components/Menu'
@@ -37,7 +38,16 @@ export default function Mundo() {
             <MenuHamburger />
             <div className="container">
                <Menu />
-                <div className="dataDiv">
+               <motion.div 
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    variants={{
+                        show: { opacity: 1 },
+                        hidden: { opacity: 0 },
+                    }}
+                    initial="hidden"
+                    animate="show"
+                    className="dataDiv"
+                >
                     <h1>Mundo <RiGlobeFill /></h1>
                     <div className="cards-container">
                         <div className="part">
@@ -53,7 +63,7 @@ export default function Mundo() {
                             </div>
                         </div>
                     </div>
-                </div>  
+                </motion.div>  
             </div>
             <Footer />
         </div>
