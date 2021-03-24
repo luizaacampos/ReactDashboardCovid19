@@ -70,7 +70,7 @@ yarn start
     <ul>
       <li><a href="https://nodejs.org/en/">Node.js</a></li>
       <li><a href="https://pt-br.reactjs.org/">React.js</a></li>
-      <li><a href="https://www.framer.com/motion/">Frmer Motion</a></li>
+      <li><a href="https://www.framer.com/motion/">Framer Motion</a></li>
       <li><a href="https://corona.lmao.ninja/docs/">API</a></li>
     </ul>
   </p>
